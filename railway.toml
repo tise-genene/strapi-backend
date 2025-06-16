@@ -1,0 +1,20 @@
+[app]
+name = "scholarship-backend"
+
+[env]
+NODE_ENV = "production"
+
+[database]
+name = "postgres"
+size = "free"
+
+[web]
+name = "web"
+size = "free"
+startCommand = "npm run develop"
+port = 1337
+
+[web.env]
+DATABASE_URL = "postgresql://postgres:@localhost:5432/scholarship_db"
+PORT = "1337"
+NODE_ENV = "production"
