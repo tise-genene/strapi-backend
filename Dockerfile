@@ -4,10 +4,10 @@ FROM strapi/strapi:latest
 WORKDIR /srv/app
 
 # Copy package files
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
 # Copy application
 COPY . .
@@ -16,4 +16,4 @@ COPY . .
 EXPOSE 1337
 
 # Start Strapi
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
